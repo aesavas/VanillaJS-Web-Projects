@@ -1,3 +1,8 @@
+/* For Author */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Tangerine:wght@400;700&display=swap');
+/* For Quote */
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+
 html {
     box-sizing: border-box;
 }
@@ -5,4 +10,146 @@ html {
 body{
     margin: 0;
     min-height: 100vh;
+    background-color: #e0fbfc;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='10' viewBox='0 0 20 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 6H6v4H4V6H2V4h2V0h2v4h10V0h2v4h2v2h-2v4h-2V6z' fill='%233d5a80' fill-opacity='0.26' fill-rule='evenodd'/%3E%3C/svg%3E");
+    font-family: Tangerine, sans-serif;
+    font-weight: 400;
+    color: #293241;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote-container{
+    width: auto;
+    max-width: 900px;
+    padding: 20px 30px;
+    border-radius: 15px;
+    background-color: rgba(224, 251, 252, 0.7);
+    box-shadow: 0 10px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.quote-text{
+    font-size: 3.5rem;
+}
+
+.long-quote {
+    font-size: 3rem;
+}
+
+.fa-quote-left{
+    font-size: 4rem;
+}
+
+.quote-author{
+    margin-top: 15px;
+    font-size: 3rem;
+    font-family: Cinzel,sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.button-container{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+button{
+    font-size: 1.3rem;
+    height: 2.8rem;
+    border: none;
+    border-radius: 10px;
+    color:#FFFFFF;
+    background-color: #293241;
+    outline: none;
+    padding: 0.75rem 2rem; /* Top-bottom  left-right */
+    box-shadow: 0 0.3rem rgba(61, 90, 128, 0.6); /* horizontal vertical */
+}
+
+button:hover{
+    filter: brightness(130%);
+}
+
+button:active{
+    transform: translate(0, 0.3rem);
+    box-shadow: 0 0.1rem rgba(61, 90, 128, 0.6);
+}
+
+.copy-button:hover{
+    color: #E0FBFC;
+}
+
+.fa-copy{
+    font-size: 1.5rem;
+}
+
+/* Tooltip */
+
+.copy-button .tooltip-text {
+    visibility: hidden;
+    width: 140px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.copy-button .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.copy-button:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Loader */
+
+.loader {
+    border: 16px solid #e0fbfc; /* Light grey */
+    border-top: 16px solid #293241; /* Blue */
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+/* Media Query for smaller screen */
+@media screen and (max-width: 1000px){
+    .quote-container{
+        margin:auto 15px;
+    }
+
+    .quote-text{
+        font-size: 2.5rem;
+    }
+
+    .quote-author{
+        font-size: 2rem;
+    }
 }
